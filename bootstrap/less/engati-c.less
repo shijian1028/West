@@ -1,0 +1,61 @@
+@img:"../img/";
+.bg(){
+  background:
+          url("@{img}jingling.png")
+          no-repeat;
+}
+.bg-s(@l){
+  background-size: @l;
+}
+.bg-p(@l,@t){
+  background-position: @l @t;
+}
+.pic-font(@w,@t){
+  height: 0;
+  padding-top: @t;
+  width: @w;
+  overflow: hidden;
+}
+.container{
+  width: 750px;
+}
+#contact-section{
+  background: none;
+  .contact-left{
+    background-color: #fff;
+  }
+  .contact-right{
+    background-color: #858585;
+  }
+}
+.footer-nav .footer-email{
+  float: none;
+  display: block;
+  text-align: center;
+}
+.footer-nav{
+  font-size: 0;
+  text-align: center;
+}
+.footer-nav .nav-icon{
+  display: inline-block;
+  vertical-align: top;
+  float: none;
+  a{
+    .for-nav-icon(5);
+  }
+  span{
+    .pic-font(15px,15px);
+    .bg();
+    .bg-s(666.667px);
+  }
+}
+.for-nav-icon(@num) when(@num>0){
+  .for-nav-icon(@num - 1);
+  &:nth-of-type(@{num}) span{
+    .bg-p((-347px)+(-13.33333)*(@num - 1),-51px);
+  }
+  &:nth-of-type(@{num}):hover span{
+    .bg-p((-347px)+(-13.33333)*(@num - 1),-65px);
+  }
+}

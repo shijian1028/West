@@ -1,0 +1,12 @@
+.container {
+  width: 970px;
+}
+.header-content .header-content-left {
+  padding-top: 178px;
+}
+.header-content .header-content-right {
+  padding-top: 104px;
+}
+.Features-list li {
+  margin-left: 8.33333333%;
+}
