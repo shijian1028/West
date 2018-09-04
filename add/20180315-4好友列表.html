@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            height: 800px;
+            border: 5px solid #000000;
+            cursor: pointer;
+        }
+        p{
+            color: #ffffff;
+            background: red;
+        }
+        ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>
+        我的好友
+    </p>
+    <ul>
+        <li>小佳LOVE</li>
+        <li>从来就是这么不正紧</li>
+        <li>leo是个胖子</li>
+        <li>momo不是陌陌</li>
+    </ul>
+    <p>
+        企业好友
+    </p>
+    <ul>
+        <li>习近平</li>
+        <li>普金</li>
+        <li>奥巴马</li>
+    </ul>
+    <p>
+        黑名单
+    </p>
+    <ul>
+        <li>安倍</li>
+        <li>特尔发啦</li>
+        <li>奥巴驴</li>
+    </ul
+
+</div>
+
+<script>
+    var ps = document.querySelectorAll("p");
+    var uls = document.querySelectorAll("ul");
+    // console.log(uls);
+    var n = -1;
+    for(var i=0;i<3;i=i+1){
+        ps[i].onoff = true;
+        ps[i].index = i;
+            ps[i].onclick = function ( ) {
+                 if(n!=this.index){
+                           for(var j=0;j<3;j=j+1){
+                               uls[j].style.display = "none";
+                               ps[j].onoff = true;
+                           }
+                 }
+                if(this.onoff){
+                    uls[this.index].style.display = "block";
+                    this.onoff = false;
+                    n = this.index;
+                }else {
+                    uls[this.index].style.display = "none";
+                    this.onoff = true;
+                };
+            };
+        };
+</script>
+
+</body>
+</html>
